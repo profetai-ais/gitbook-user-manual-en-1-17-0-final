@@ -175,11 +175,11 @@ Prompt generation supports both rewriting existing content and generating from s
 3. When generation is complete, you can edit the result as needed.
 4. Click **Save** to finish.
 
-> Note: When generating or rewriting an instruction, the system takes the Agent's current settings into account — such as the tools, skills and collaborating Agents it already has — so that the instruction matches what the Agent can actually do. A notification in the lower-right corner tells you that these settings are being used.
+> Note: When generating or rewriting an instruction, the system takes the Agent's current settings into account — such as the tools, skills and collaborating Agents it already has — so that the instruction matches what the Agent can actually do. A notification in the lower-right corner tells you that these settings are being used. A rewritten instruction does not keep its skill and tool references, so select them again with "/". See [Referencing skills and tools in an instruction](#zai-zhi-ling-zhong-yin-yong-ji-neng-yu-gong-ju).
 
 #### **Using system variables in instructions**
 
-You can add system variables to an instruction so the Agent gets information about the current user and conversation during the chat — for example, to tailor responses to the user's account or name. Type "/" in the instruction box to select a variable. Inserted variables are shown as gray tags.
+You can add system variables to an instruction so the Agent gets information about the current user and conversation during the chat — for example, to tailor responses to the user's account or name. Type "/" in the instruction box to open the menu, then select a variable from the **System** group. Inserted variables are shown as gray tags. The same menu can also reference skills and tools; see below.
 
 | Variable | Description |
 | --- | --- |
@@ -196,6 +196,34 @@ You can add system variables to an instruction so the Agent gets information abo
 | `system.dateTime` | The current system date and time |
 
 > Variable values depend on how the user signed in. For example, when signed in with an AI Studio account, the variables related to external sign-in services may be empty.
+
+#### **Referencing skills and tools in an instruction** <a href="#zai-zhi-ling-zhong-yin-yong-ji-neng-yu-gong-ju" id="zai-zhi-ling-zhong-yin-yong-ji-neng-yu-gong-ju"></a>
+
+When an instruction mentions a skill or tool, you can select it directly with "/". Once selected, the system records the actual item it points to rather than just a piece of text: the reference keeps working if the item is renamed, and it is checked when you save.
+
+<figure><img src="../.gitbook/assets/instruction-slash-reference.png" alt=""><figcaption></figcaption></figure>
+
+1. Type "/" in the instruction box.
+2. Find the item you want to reference in the **Tool** or **Skill** group of the menu, or type its name in the search box.
+3. Click the item. A reference tag for it is inserted into the instruction.
+4. Click **Save**.
+
+<table data-search="false"><thead><tr><th width="90">Item</th><th width="157">Name</th><th>Description</th></tr></thead><tbody><tr><td>1</td><td>Search</td><td>Search variables, tools and skills by name</td></tr><tr><td>2</td><td>Tool</td><td>Tools you can reference</td></tr><tr><td>3</td><td>Skill</td><td>Skills you can reference</td></tr><tr><td>4</td><td>Source tag</td><td><strong>Agent</strong> means the item has been added to this Agent and can be used at run time; <strong>Personal</strong> means you have permission to use the item but it has not been added to this Agent yet</td></tr></tbody></table>
+
+> Note: Referencing an item does not add it to the Agent automatically. When you reference an item tagged **Personal**, first add it to this Agent under **Tools** or **Skill**; otherwise it has no effect at run time.
+
+**Reference check on save**
+
+<figure><img src="../.gitbook/assets/reference-check-notification.png" alt=""><figcaption></figcaption></figure>
+
+When you save an instruction, the system checks every reference. If any reference may not be usable, a notification "Some Skill/Tool references may be unavailable" appears at the top of the screen (1 in the image above), listing each reference's type and name, the reason, and the line and column where it appears. The notification closes automatically after a few seconds. The instruction is still saved; adjust it according to the table below and save again so the references take effect.
+
+| Reason                                                  | What to do                                                                           |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| Not found (deleted or wrong id)                         | The item has been deleted. Remove the reference or choose another item               |
+| Disabled                                                | The item has been disabled. Ask its admin to enable it again, or choose another item |
+| No read permission                                      | You do not have permission to use the item. Ask its admin to grant you permission    |
+| Not attached to this Agent; it has no effect at run time | Add the item to the Agent under **Tools** or **Skill**                               |
 
 #### **Restoring a previous instruction**
 
@@ -362,7 +390,7 @@ Canvas is on by default when an Agent is created.
 
 When enabled, an Action Card appears below a response whenever the Agent needs the user to take part in a decision, confirm an action or provide extra information. Users can complete the interaction, or skip the card and continue the conversation.
 
-#### **Execution process**
+#### **Execution process** <a href="#zhi-xing-guo-cheng" id="zhi-xing-guo-cheng"></a>
 
 <figure><img src="../.gitbook/assets/image (55).png" alt=""><figcaption></figcaption></figure>
 
@@ -389,17 +417,19 @@ When enabled, the Agent presents its responses as cards, tables, charts and flow
 
 <figure><img src="../.gitbook/assets/image (691).png" alt=""><figcaption></figcaption></figure>
 
-Use this area to test the Agent's responses and adjust the settings accordingly.
+Use this area to test the Agent's responses and adjust the settings accordingly. The right-side panels in the Debug Preview, such as Canvas, Web Search, Mind Map and knowledge base citations, work the same way as in the Workspace.
 
-Conversations in the Debug Preview apply only to the current test. When you leave the page, the conversation session is reset, and the next time you open the Debug Preview you start a new conversation.
+### Switching and deleting test conversations
 
-There is currently no other page or conversation history entry point that continues earlier test content. To keep testing, stay on the Debug Preview page.
+<figure><img src="../.gitbook/assets/debug-preview-sessions.png" alt=""><figcaption></figcaption></figure>
 
-If you leave the preview and come back, the conversation starts over and cannot be continued. To continue the same conversation, work in the Workspace (the production conversation environment) rather than the Debug Preview.
+The Debug Preview keeps every test conversation. If you switch to another settings page of the Agent and come back, the conversation is still there and you can continue testing. You can also switch back to an earlier test conversation and keep asking questions.
 
-The right-side panels in the Debug Preview, such as Canvas, Web Search, Mind Map and knowledge base citations, work the same way as in the Workspace.
+<table data-search="false"><thead><tr><th width="90">Item</th><th width="157">Action</th><th>Description</th></tr></thead><tbody><tr><td>1</td><td>Test conversation</td><td>Click the drop-down menu next to the title to switch to another test conversation of this Agent. Conversation names are generated from the first question, and the menu lists only your own test conversations</td></tr><tr><td>2</td><td>Delete</td><td>Hover over a conversation in the menu and click the trash icon to delete it</td></tr><tr><td>3</td><td>New Conversation</td><td>Start a new test conversation</td></tr><tr><td>4</td><td>Conversation files</td><td>View the files uploaded or produced in this test conversation</td></tr></tbody></table>
 
-> Note: Before leaving the Debug Preview page, copy or record any test content you want to keep. If an error message appears during testing, hover over it and click the light-bulb button to ask Copilot. See [Asking Copilot about an error](../ping-tai-zhi-nan/ai-studio-copilot.md#yu-dao-cuo-wu-shi-xun-wen-copilot).
+> Note: Deleting a test conversation in the Debug Preview only removes it from the menu. The Conversation Log still keeps the full conversation, with the source shown as **Debug Preview**. See [Conversation Log](dui-hua-ri-zhi.md).
+
+If an error message appears during testing, hover over it and click the light-bulb button to ask Copilot. See [Asking Copilot about an error](../ping-tai-zhi-nan/ai-studio-copilot.md#yu-dao-cuo-wu-shi-xun-wen-copilot).
 
 ### Uploading files in the **Debug Preview**
 

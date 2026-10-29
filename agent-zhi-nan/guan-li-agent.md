@@ -46,6 +46,22 @@ In the Agent list, click the edit button on a row to open the quick edit window,
 2. The confirmation window is pre-filled with the original Agent's name. You can change it to a new name so the copy is easy to tell apart from the original.
 3. Click confirm to create the copy, or click cancel to close the window without creating it.
 
+## Viewing the Agents that use an Agent
+
+<figure><img src="../.gitbook/assets/agent-in-use-button.png" alt=""><figcaption></figcaption></figure>
+
+An Agent can be added to another Agent's **Coordination** and used as a SubAgent. Before you change or delete an Agent, you can check which Agents use it, so you do not affect their responses.
+
+Hover over any row in the Agent list and click the **Agents in use** button to see which Agents currently use this Agent as a SubAgent.
+
+<figure><img src="../.gitbook/assets/agent-in-use-dialog.png" alt=""><figcaption></figcaption></figure>
+
+The window lists each parent Agent's publish status, name and creator, and the SubAgents it uses. If no Agent uses it, the window shows that there is no data.
+
+### Deleting an Agent that is in use
+
+An Agent that another Agent is using as a SubAgent cannot be deleted directly. The system shows the message "This Agent is currently used as a SubAgent by the following Agents. Remove it from these Agents before deleting it." Go to the **Coordination** of each listed Agent and remove it there, then come back and delete it.
+
 ## Exporting and importing an Agent (JSON)
 
 Export and import can be used to back up Agent settings, move settings between environments, or quickly duplicate a similar Agent to save repeated configuration work.

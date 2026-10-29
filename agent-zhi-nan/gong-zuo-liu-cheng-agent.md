@@ -79,13 +79,17 @@ When disabled, responses do not show knowledge base citations and **Reference Fi
 
 Use this area to test the Agent's responses and adjust the settings accordingly.
 
-Conversations in the Debug Preview apply only to the current test. When you leave the page, the conversation session is reset, and the next time you open the Debug Preview you start a new conversation.
+### Switching and deleting test conversations
 
-There is currently no other page or conversation history entry point that continues earlier test content. To keep testing, stay on the Debug Preview page.
+<figure><img src="../.gitbook/assets/debug-preview-sessions.png" alt=""><figcaption></figcaption></figure>
 
-If you leave the preview and come back, the conversation starts over and cannot be continued. To continue the same conversation, work in the Workspace (the production conversation environment) rather than the Debug Preview.
+The Debug Preview keeps every test conversation. If you switch to another settings page of the Agent and come back, the conversation is still there and you can continue testing. You can also switch back to an earlier test conversation and keep asking questions.
 
-> Note: Before leaving the Debug Preview page, copy or record any test content you want to keep. If an error message appears during testing, hover over it and click the light-bulb button to ask Copilot. See [Asking Copilot about an error](../ping-tai-zhi-nan/ai-studio-copilot.md#yu-dao-cuo-wu-shi-xun-wen-copilot).
+<table data-search="false"><thead><tr><th width="90">Item</th><th width="157">Action</th><th>Description</th></tr></thead><tbody><tr><td>1</td><td>Test conversation</td><td>Click the drop-down menu next to the title to switch to another test conversation of this Agent. Conversation names are generated from the first question, and the menu lists only your own test conversations</td></tr><tr><td>2</td><td>Delete</td><td>Hover over a conversation in the menu and click the trash icon to delete it</td></tr><tr><td>3</td><td>New Conversation</td><td>Start a new test conversation</td></tr><tr><td>4</td><td>Conversation files</td><td>View the files uploaded or produced in this test conversation</td></tr></tbody></table>
+
+> Note: Deleting a test conversation in the Debug Preview only removes it from the menu. The Conversation Log still keeps the full conversation, with the source shown as **Debug Preview**. See [Conversation Log](dui-hua-ri-zhi.md).
+
+If an error message appears during testing, hover over it and click the light-bulb button to ask Copilot. See [Asking Copilot about an error](../ping-tai-zhi-nan/ai-studio-copilot.md#yu-dao-cuo-wu-shi-xun-wen-copilot).
 
 ### Uploading files in the **Debug Preview**
 

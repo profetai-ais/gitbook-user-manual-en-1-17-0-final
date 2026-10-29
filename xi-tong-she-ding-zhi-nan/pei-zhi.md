@@ -47,11 +47,15 @@ The reasoning model used to extract, consolidate and manage memory content.
 
 The embedding model that turns memory text into vectors, which supports semantic similarity search.
 
-### Conversational BI
+### Conversational BI <a href="#dui-hua-shi-bi" id="dui-hua-shi-bi"></a>
 
-Controls whether users can create a new BI Dashboard in a conversation.
+Controls whether users can generate a BI Dashboard in a conversation, and how the Agent generates it. For how to use dashboards, see [BI Dashboard](../gong-zuo-zhi-nan/bi-yi-biao-ban.md).
 
-When it is off, the BI Dashboard creation entry point is hidden in the main conversation and the system does not offer the related generation tools. Existing BI Dashboards can still be edited through the ask panel or by selecting a tile.
+<table data-search="false"><thead><tr><th width="190">Setting</th><th>Description</th></tr></thead><tbody><tr><td>Allow BI Dashboard generation in conversations</td><td>The master switch for Conversational BI. When it is off, the <strong>BI Dashboard</strong> button in the main conversation is hidden and the Agent does not use the dashboard generation tools; existing dashboards can still be changed through the ask panel or by selecting tiles. Off by default on a new installation</td></tr><tr><td>Plan the layout per question</td><td>For data analysis questions, the system picks the blocks to include and arranges the layout according to the question, instead of applying a fixed template. On by default</td></tr><tr><td>Add a conclusion to each tile</td><td>On dashboards laid out per question, each tile gets a one-sentence conclusion, with a note added when, for example, the sample is small or the period is incomplete. On by default</td></tr><tr><td>Let the Agent write pages freely</td><td>For questions answered from web pages, uploaded files or estimates, the Agent writes a whole Artifact page (including charts and insights) itself instead of applying a fixed template. When it is off, a fixed layout is used. On by default</td></tr><tr><td>Use free-form pages for datasource questions by default</td><td>For questions that need a datasource or a knowledge base spreadsheet, the Agent produces an Artifact page by default; after 2 consecutive failures it produces a standard dashboard instead. When it is off, these questions use a standard dashboard, and an Artifact page is produced only when the user explicitly asks for one. Takes effect only when <strong>Let the Agent write pages freely</strong> is also on. On by default</td></tr><tr><td>LLM insights</td><td>After a dashboard laid out per question is generated, the system adds a conclusion and cause analysis to each tile in the background. When it is off, only the figures and facts calculated from the data are shown. On by default</td></tr></tbody></table>
+
+{% hint style="info" %}
+**Add a conclusion to each tile** and **LLM insights** add model calls. Turning them off saves Tokens, but the dashboard will not show the conclusions and analysis written by AI.
+{% endhint %}
 
 ### User memory tools
 

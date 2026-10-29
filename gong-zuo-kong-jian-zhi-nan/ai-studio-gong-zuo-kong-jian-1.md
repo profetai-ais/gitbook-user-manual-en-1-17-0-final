@@ -47,6 +47,29 @@ When reporting a problem, you can provide the conversation's Session ID so that 
 
 <figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
+### Sharing a conversation
+
+You can share a whole conversation with other people. When they open the link, they can only read the conversation (read-only); they cannot keep asking questions in it, and the conversation does not appear in their own conversation list.
+
+<figure><img src="../.gitbook/assets/share-conversation.png" alt=""><figcaption></figcaption></figure>
+
+1. Hover over a conversation on the left, click the "…" menu and select **Share**.
+2. In the **Share Conversation** window, set the access permission and the expiration date.
+3. Click **Publish**, then copy the share link and send it to the people who should see it.
+
+<table data-search="false"><thead><tr><th width="90">Item</th><th width="157">Name</th><th>Description</th></tr></thead><tbody><tr><td>1</td><td>Access</td><td>Choose who can view this conversation. See the options in the table below</td></tr><tr><td>2</td><td>Specific accounts</td><td>When access is set to <strong>Specific accounts</strong>, enter a user name or email account here to add the people who can view it</td></tr><tr><td>3</td><td>Expiration date</td><td>How long the share link stays valid. The default is one month later. The expiration date is applied only when you publish and cannot be changed afterwards; to change it, click <strong>Unpublish</strong> first and set it again</td></tr><tr><td>4</td><td>Publish</td><td>Create the share link</td></tr></tbody></table>
+
+| Access            | Who can view                                   |
+| ----------------- | ---------------------------------------------- |
+| Specific accounts | Only you and the people you add                |
+| All users         | Anyone with an account, after signing in       |
+| Public            | Anyone who has the link                        |
+
+* If new content is added to the conversation after you share it, what the recipients see is updated as well.
+* A conversation with no content yet, or with too much content, cannot be shared.
+
+> Note: When you choose **Public**, anyone who gets the link can view the conversation. Before sharing, make sure the conversation contains nothing that should not be made public.
+
 ### Switching between conversations with the same Agent
 
 In a conversation, you can switch directly to another conversation with the same Agent, without going back to the recent conversations list on the left.
@@ -57,7 +80,7 @@ In a conversation, you can switch directly to another conversation with the same
 
 While the Agent is responding, **Execution Process** and the current step — such as calling a tool or querying a knowledge base — are shown above the response, so users know which step the Agent is working on.
 
-Click **Execution Process** to open the execution details and see the current step.
+Click **Execution Process** to open **Execution Details** on the right, where you can check each step's settings, variables and input. If the response was delegated to an external Agent, **Execution Details** has an additional **Conversation between Agents** tab showing what the two Agents actually said. See [A2A - Viewing the conversation between Agents](../neng-li-zhi-nan/a2a.md#cha-kan-agent-zhi-jian-de-dui-hua).
 
 <figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 

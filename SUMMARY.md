@@ -52,6 +52,7 @@
 
 * [Schedule](gong-zuo-zhi-nan/pai-cheng.md)
 * [Webhook Integration Guide](gong-zuo-zhi-nan/webhook-jie-jie-zhi-nan.md)
+* [BI Dashboard](gong-zuo-zhi-nan/bi-yi-biao-ban.md)
 
 ## Capability Guide
 

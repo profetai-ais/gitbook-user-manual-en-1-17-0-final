@@ -127,6 +127,22 @@ The A2A page itself also has permissions controlling who can open it and add ent
 
 For other collaboration actions, see [Chat Agent - Coordination](../agent-zhi-nan/liao-tian-agent.md#agent-xie-zuo).
 
+### Viewing the conversation between Agents <a href="#cha-kan-agent-zhi-jian-de-dui-hua" id="cha-kan-agent-zhi-jian-de-dui-hua"></a>
+
+When an Agent delegates a question to an external Agent, you can see what the two sides actually said, to check what your Agent asked and how the other Agent answered.
+
+<figure><img src="../.gitbook/assets/a2a-agents-conversation.png" alt=""><figcaption></figcaption></figure>
+
+1. In the conversation, click the execution status above the response. **Execution Details** opens on the right.
+2. Switch to the **Conversation between Agents** tab.
+
+<table data-search="false"><thead><tr><th width="90">No.</th><th width="157">Name</th><th>Description</th></tr></thead><tbody><tr><td>1</td><td>Execution status</td><td>Click it to open <strong>Execution Details</strong></td></tr><tr><td>2</td><td>Conversation between Agents</td><td>This tab appears only for responses that were delegated to an external Agent</td></tr><tr><td>3</td><td>Your Agent</td><td>The question sent to the external Agent, shown with your Agent's name</td></tr><tr><td>4</td><td>External Agent</td><td>The other side's reply, shown with its name, an <strong>External</strong> tag and the reply time. Long content is collapsed first; expand it to read the full text</td></tr></tbody></table>
+
+* If the other side's reply failed, it is marked with a warning style. If no reply was received, "No reply received from the other Agent" and an error summary are shown.
+* If the same response is delegated several times, each round is listed in time order.
+
+> Note: The execution status appears above a response only if **Execution process** is turned on under the Agent's **Chat panel → Chat Display**. See [Chat Agent - Execution process](../agent-zhi-nan/liao-tian-agent.md#zhi-xing-guo-cheng). This tab is not shown in conversations opened through a Web App.
+
 ## FAQ
 
 <details>
