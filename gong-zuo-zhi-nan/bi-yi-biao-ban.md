@@ -2,7 +2,8 @@
 description: >-
   A BI Dashboard turns datasources, knowledge base spreadsheets, web pages or
   uploaded files into number cards, charts and analysis pages, with scheduled
-  updates, filters, alerts, version management, ex
+  updates, filters, alerts, version management, export, and metrics that keep
+  figures calculated the same way.
 ---
 
 # BI Dashboard
