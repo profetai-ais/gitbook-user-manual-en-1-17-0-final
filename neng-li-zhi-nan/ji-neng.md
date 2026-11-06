@@ -137,12 +137,12 @@ Hover over any row in the skill list and click the **Agent in Use** button to se
 
 When a skill is used by Agents, the system first lists the **Affected agents** before the following actions, and warns that the action may affect those Agents' responses or the related tasks. The action continues only after you confirm:
 
-| Action                                          | System behavior                                    |
-| ----------------------------------------------- | -------------------------------------------------- |
-| Disable (single or bulk)                        | Lists the affected Agents; disables only after you confirm |
-| Delete (single or bulk)                         | Lists the affected Agents; deletes only after you confirm  |
+| Action                                             | System behavior                                            |
+| -------------------------------------------------- | ---------------------------------------------------------- |
+| Disable (single or bulk)                           | Lists the affected Agents; disables only after you confirm |
+| Delete (single or bulk)                            | Lists the affected Agents; deletes only after you confirm  |
 | Change the content on the skill edit page and save | Lists the affected Agents; saves only after you confirm    |
-| Enable                                          | Not checked; enabled directly                      |
+| Enable                                             | Not checked; enabled directly                              |
 
 When no Agent uses it, disabling shows a general warning and deleting shows the general delete confirmation.
 
@@ -211,7 +211,7 @@ There are two ways to get AI help with a skill:
 
 ### Creating or improving a skill from an Agent conversation
 
-<figure><img src="../.gitbook/assets/image (765).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (54).png" alt=""><figcaption></figcaption></figure>
 
 When a conversation with an Agent produces a process, practice or piece of expertise worth reusing, call **@ProfetAI Skill Builder** in that conversation to carry the discussion into the Skill workspace, where you can create a new SKILL or improve an existing one.
 

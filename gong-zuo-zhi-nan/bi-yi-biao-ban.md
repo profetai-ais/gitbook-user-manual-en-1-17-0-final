@@ -2,8 +2,7 @@
 description: >-
   A BI Dashboard turns datasources, knowledge base spreadsheets, web pages or
   uploaded files into number cards, charts and analysis pages, with scheduled
-  updates, filters, alerts, version management, export, and metrics that keep
-  figures calculated the same way.
+  updates, filters, alerts, version management, ex
 ---
 
 # BI Dashboard
@@ -12,10 +11,10 @@ description: >-
 
 A BI Dashboard organizes data into number cards, charts and detail tables, with analysis insights written by AI. A dashboard can hold two kinds of content, and both can sit on the same dashboard:
 
-| Type               | Description                                                                                                                                         | When it is used                                                                                                         |
-| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| Artifact page      | A full analysis page written by the Agent in one go, including number cards, charts, tables and insights. Once added to a dashboard, the whole page is one tile | The default output. Used for analyses that need figures from a datasource, and for analyses based on web pages or uploaded files |
-| Standard dashboard | Generated from a template and made up of individual tiles — number cards, charts, detail tables, insights and section titles — each of which can be adjusted on its own | When you explicitly ask for a standard dashboard or a template                                                          |
+| Type               | Description                                                                                                                                                             | When it is used                                                                                                                  |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Artifact page      | A full analysis page written by the Agent in one go, including number cards, charts, tables and insights. Once added to a dashboard, the whole page is one tile         | The default output. Used for analyses that need figures from a datasource, and for analyses based on web pages or uploaded files |
+| Standard dashboard | Generated from a template and made up of individual tiles — number cards, charts, detail tables, insights and section titles — each of which can be adjusted on its own | When you explicitly ask for a standard dashboard or a template                                                                   |
 
 When you ask an Agent to analyze data in a conversation, it produces an Artifact page by default; it produces a standard dashboard only when you explicitly ask for a standard dashboard or a template. If generating an Artifact page fails repeatedly, the Agent also falls back to a standard dashboard. Both kinds of content are first previewed on the canvas on the right of the conversation, and are added to a dashboard only after you pin or confirm them.
 
@@ -28,12 +27,12 @@ When you ask an Agent to analyze data in a conversation, it produces an Artifact
 
 To generate a BI Dashboard or an Artifact page in a conversation, the following conditions must be met:
 
-| Condition                   | Description                                                                                                                                                                                                                                                       |
-| --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Conversational BI enabled   | An administrator must turn on **Allow BI Dashboard generation in conversations** under **Conversational BI** in **System Setting → Configuration → Global**. See [Configuration - Conversational BI](../xi-tong-she-ding-zhi-nan/pei-zhi.md#dui-hua-shi-bi). It is off by default on a new installation |
-| BI permission               | The user's role must have the BI Dashboard permission                                                                                                                                                                                                             |
-| Agent type and settings     | Use a Chat Agent or a Workflow Agent with its BI feature turned on. It is on by default for Chat Agents; for Workflow Agents it is off by default and must be turned on in the workflow node                                                                     |
-| Data                        | The data must have a completed data model, or come from a knowledge base spreadsheet                                                                                                                                                                             |
+| Condition                 | Description                                                                                                                                                                                                                                                                                             |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Conversational BI enabled | An administrator must turn on **Allow BI Dashboard generation in conversations** under **Conversational BI** in **System Setting → Configuration → Global**. See [Configuration - Conversational BI](../xi-tong-she-ding-zhi-nan/pei-zhi.md#dui-hua-shi-bi). It is off by default on a new installation |
+| BI permission             | The user's role must have the BI Dashboard permission                                                                                                                                                                                                                                                   |
+| Agent type and settings   | Use a Chat Agent or a Workflow Agent with its BI feature turned on. It is on by default for Chat Agents; for Workflow Agents it is off by default and must be turned on in the workflow node                                                                                                            |
+| Data                      | The data must have a completed data model, or come from a knowledge base spreadsheet                                                                                                                                                                                                                    |
 
 Once these conditions are met, select **BI Dashboard** in the conversation input box and enter your analysis request.
 
@@ -93,14 +92,14 @@ Select **BI Dashboard** in the conversation input box and ask the Agent to analy
 
 **The "⋮" menu**
 
-| Item                    | Description                                                                                                          |
-| ----------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| Datasource              | View the datasources the dashboard uses. When a datasource is out of date, a warning dot appears on the "⋮" button  |
-| Datasource MDL          | Opens the datasource's semantic layer settings (manage permission required)                                         |
-| Version history         | View and restore earlier versions. See [Version history](bi-yi-biao-ban.md#ban-ben-li-shi)                          |
+| Item                    | Description                                                                                                                  |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Datasource              | View the datasources the dashboard uses. When a datasource is out of date, a warning dot appears on the "⋮" button           |
+| Datasource MDL          | Opens the datasource's semantic layer settings (manage permission required)                                                  |
+| Version history         | View and restore earlier versions. See [Version history](bi-yi-biao-ban.md#ban-ben-li-shi)                                   |
 | Scheduled refresh       | Set up regular automatic updates (manage permission required). See [Scheduled refresh](bi-yi-biao-ban.md#pai-cheng-shua-xin) |
-| Export PNG / Export PDF | Export the current view as an image or a PDF. See [Exporting PNG/PDF](bi-yi-biao-ban.md#hui-chu-pngpdf)             |
-| Switch theme            | Switch between the light and dark theme. This affects only the current view and is not saved                        |
+| Export PNG / Export PDF | Export the current view as an image or a PDF. See [Exporting PNG/PDF](bi-yi-biao-ban.md#hui-chu-pngpdf)                      |
+| Switch theme            | Switch between the light and dark theme. This affects only the current view and is not saved                                 |
 
 When a dashboard contains only one Artifact page tile, the header buttons and the "⋮" menu also include the Artifact actions. See [Header actions](bi-yi-biao-ban.md#ye-shou-cao-zuo).
 
@@ -118,28 +117,28 @@ A standard dashboard is made up of individual tiles: number cards, charts, detai
 
 **The tile's "⋮" menu** (items depend on the tile type; most require manage permission)
 
-| Item                            | Description                                                                                                                                                                       |
-| ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Sources                         | View the sources cited by an insight or qualitative content. Click a source to jump to the corresponding tile or open the web page                                              |
-| View SQL                        | View the query this tile uses                                                                                                                                                     |
-| Mark as verified                | Register this tile's question and SQL as a verified Q&A. See [Verified Q&A](bi-yi-biao-ban.md#yi-yan-zheng-wen-da)                                                                |
-| Pin to another Dashboard        | Copy the tile to another dashboard                                                                                                                                                |
-| Pivot                           | Set rows, columns and values for a detail table to produce a summary table. See [Pivot analysis](bi-yi-biao-ban.md#shu-niu-fen-xi)                                                |
-| Alert settings                  | Send an email notification when a figure meets a condition. See [Alert settings](bi-yi-biao-ban.md#gao-jing-she-ding)                                                              |
-| Export CSV / Export XLSX        | Export the detail table's data                                                                                                                                                    |
-| Change chart type               | Change to a bar, trend, pie, donut, scatter, radar or dual-axis chart                                                                                                             |
+| Item                              | Description                                                                                                                                                                                               |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Sources                           | View the sources cited by an insight or qualitative content. Click a source to jump to the corresponding tile or open the web page                                                                        |
+| View SQL                          | View the query this tile uses                                                                                                                                                                             |
+| Mark as verified                  | Register this tile's question and SQL as a verified Q\&A. See [Verified Q\&A](bi-yi-biao-ban.md#yi-yan-zheng-wen-da)                                                                                      |
+| Pin to another Dashboard          | Copy the tile to another dashboard                                                                                                                                                                        |
+| Pivot                             | Set rows, columns and values for a detail table to produce a summary table. See [Pivot analysis](bi-yi-biao-ban.md#shu-niu-fen-xi)                                                                        |
+| Alert settings                    | Send an email notification when a figure meets a condition. See [Alert settings](bi-yi-biao-ban.md#gao-jing-she-ding)                                                                                     |
+| Export CSV / Export XLSX          | Export the detail table's data                                                                                                                                                                            |
+| Change chart type                 | Change to a bar, trend, pie, donut, scatter, radar or dual-axis chart                                                                                                                                     |
 | Convert to an updatable component | Turn static content pinned from a conversation into a tile that can be updated from a datasource. See [Converting to an updatable component](bi-yi-biao-ban.md#zhuan-huan-cheng-ke-geng-xin-de-yuan-jian) |
-| Re-source                       | Regenerate this tile from its materials, one tile at a time, taking up to about 5 minutes                                                                                        |
-| Delete                          | Delete this tile                                                                                                                                                                  |
+| Re-source                         | Regenerate this tile from its materials, one tile at a time, taking up to about 5 minutes                                                                                                                 |
+| Delete                            | Delete this tile                                                                                                                                                                                          |
 
 **Status icons**: a warning icon after a tile's title indicates one of the following situations; when more than one applies, a number is shown. Click the icon to see the reason and deal with it:
 
-| Status           | What to do                                                       |
-| ---------------- | ---------------------------------------------------------------- |
-| Schedule failed  | Click **Scheduled refresh** to see the reason and set it up again |
-| Alerting         | The figure meets the alert condition; click **Alert settings** to view it |
-| Filter not applied | This tile cannot apply the current filter conditions           |
-| Outdated         | The content may be out of date; refresh it, or click **Keep as is** |
+| Status             | What to do                                                                |
+| ------------------ | ------------------------------------------------------------------------- |
+| Schedule failed    | Click **Scheduled refresh** to see the reason and set it up again         |
+| Alerting           | The figure meets the alert condition; click **Alert settings** to view it |
+| Filter not applied | This tile cannot apply the current filter conditions                      |
+| Outdated           | The content may be out of date; refresh it, or click **Keep as is**       |
 
 ## Asking this dashboard <a href="#xun-wen-ci-yi-biao-ban" id="xun-wen-ci-yi-biao-ban"></a>
 
@@ -168,11 +167,11 @@ The Agent's changes do not take effect immediately. Instead, it creates **propos
 
 ## Updating a dashboard <a href="#geng-xin-yi-biao-ban" id="geng-xin-yi-biao-ban"></a>
 
-| Method            | Description                                                                                                                                  |
-| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Method            | Description                                                                                                                                                  |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Refresh           | Click **Refresh** in the header to update the whole dashboard. When some tiles are selected, click **Refresh selected tiles (n)** to update only those tiles |
-| Re-source         | Update a single tile from its "⋮" menu                                                                                                       |
-| Scheduled refresh | Update automatically at the frequency you set. See [Scheduled refresh](bi-yi-biao-ban.md#pai-cheng-shua-xin)                                |
+| Re-source         | Update a single tile from its "⋮" menu                                                                                                                       |
+| Scheduled refresh | Update automatically at the frequency you set. See [Scheduled refresh](bi-yi-biao-ban.md#pai-cheng-shua-xin)                                                 |
 
 Updates run in the background, so you can leave the page; you are notified when they finish. During an update, "Updating tiles from materials (completed/total)…" is shown at the top of the screen.
 
@@ -191,12 +190,12 @@ Updates run in the background, so you can leave the page; you are notified when 
 1. Click the schedule tag in the header, or select **Scheduled refresh** from "⋮".
 2. Set the fields as described below and save.
 
-| Field                     | Description                                                                                          |
-| ------------------------- | ---------------------------------------------------------------------------------------------------- |
-| Enable                    | Turn the schedule on or off. On by default                                                          |
-| Every                     | Enter a number (1–9999) and select hours, days, weeks or months. The default is every 1 day        |
-| Start time (optional)     | When the first run happens. The time zone follows your browser setting and cannot be changed       |
-| Notification recipients   | Required, 1–50 people. Defaults to yourself                                                         |
+| Field                         | Description                                                                                                 |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| Enable                        | Turn the schedule on or off. On by default                                                                  |
+| Every                         | Enter a number (1–9999) and select hours, days, weeks or months. The default is every 1 day                 |
+| Start time (optional)         | When the first run happens. The time zone follows your browser setting and cannot be changed                |
+| Notification recipients       | Required, 1–50 people. Defaults to yourself                                                                 |
 | Also update qualitative tiles | Whether to also update tiles that use web pages or files as material. On by default; uses additional Tokens |
 
 * When web pages or date searches are used as materials, you can set at the bottom of the window whether each material is updated too (for example **Single article** or **Page that gets updated**).
@@ -232,10 +231,10 @@ The filter bar is at the top of the dashboard and filters the whole dashboard by
 
 **Using filters**
 
-| Filter type | How to use it                                                                                                                         |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| Text        | Select multiple values from the drop-down list. The default is **All**. Up to 200 options are listed                                 |
-| Date        | Select **From** and **To**                                                                                                            |
+| Filter type | How to use it                                                                                                                           |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| Text        | Select multiple values from the drop-down list. The default is **All**. Up to 200 options are listed                                    |
+| Date        | Select **From** and **To**                                                                                                              |
 | Number      | Enter a **Minimum** and **Maximum**. If the input format is wrong or the minimum is greater than the maximum, the filter is not applied |
 
 Click **Clear all** to clear all conditions; click the × on a filter to remove it (manage permission required).
@@ -314,14 +313,14 @@ An Artifact page is a full analysis page that the Agent writes in one go in resp
 
 The same Artifact page can appear in three places, with different features available in each:
 
-| Feature                                   | Inside a dashboard               | Canvas on the right of the conversation | Shared page |
-| ----------------------------------------- | -------------------------------- | --------------------------------------- | ----------- |
-| Ask about a selected block, follow up on an insight | Yes                    | Yes                                     | No          |
-| Export a regular table                    | Yes                              | Yes                                     | No          |
-| Export a table bound to a datasource      | Yes                              | No                                      | No          |
-| View all data                             | Yes (manage permission required) | No                                      | No          |
-| Edit page layout, change charts           | Yes (manage permission required) | No                                      | No          |
-| Filter and drill down by clicking a chart | Yes (manage permission required) | No                                      | No          |
+| Feature                                             | Inside a dashboard               | Canvas on the right of the conversation | Shared page |
+| --------------------------------------------------- | -------------------------------- | --------------------------------------- | ----------- |
+| Ask about a selected block, follow up on an insight | Yes                              | Yes                                     | No          |
+| Export a regular table                              | Yes                              | Yes                                     | No          |
+| Export a table bound to a datasource                | Yes                              | No                                      | No          |
+| View all data                                       | Yes (manage permission required) | No                                      | No          |
+| Edit page layout, change charts                     | Yes (manage permission required) | No                                      | No          |
+| Filter and drill down by clicking a chart           | Yes (manage permission required) | No                                      | No          |
 
 ### Content on the page <a href="#ye-mian-shang-de-nei-rong" id="ye-mian-shang-de-nei-rong"></a>
 
@@ -399,10 +398,10 @@ Tables bound to a datasource have **View all data** below them. Click it to open
 
 The **CSV** and **Excel** buttons are in the upper-right corner of each table and on the datasource panel.
 
-| Table type                     | What is exported                                       | Limit                                              |
-| ------------------------------ | ------------------------------------------------------ | -------------------------------------------------- |
-| Table bound to a datasource    | All data from that query                               | 100,000 rows; anything beyond is truncated with a message |
-| Regular table                  | The data currently shown (after search and sorting)    | —                                                  |
+| Table type                  | What is exported                                    | Limit                                                     |
+| --------------------------- | --------------------------------------------------- | --------------------------------------------------------- |
+| Table bound to a datasource | All data from that query                            | 100,000 rows; anything beyond is truncated with a message |
+| Regular table               | The data currently shown (after search and sorting) | —                                                         |
 
 * The file name is the query title (artifact-table for a regular table) plus the export time.
 * When filters are applied, the exported data includes the current filter conditions.
@@ -445,11 +444,11 @@ Changing the chart only changes how the data is presented; the figures stay the 
 
 An Artifact page can be refreshed from three places. The result is always presented as proposals first and never overwrites the page directly:
 
-| Entry point                          | Description                     |
-| ------------------------------------ | ------------------------------- |
-| Refresh                              | Refresh the whole dashboard     |
-| Refresh selected tiles (n)           | Refresh only the selected tiles |
-| **Re-source** in a tile's "More" menu | Refresh only this tile         |
+| Entry point                           | Description                     |
+| ------------------------------------- | ------------------------------- |
+| Refresh                               | Refresh the whole dashboard     |
+| Refresh selected tiles (n)            | Refresh only the selected tiles |
+| **Re-source** in a tile's "More" menu | Refresh only this tile          |
 
 * Refreshes run in the background, so you can leave the page; you are notified when they finish. Up to 10 tiles at a time.
 * If the data has not changed, **No change** is shown right away. If the data has changed, or the page uses web pages or uploaded files, the Agent rewrites the insights and the figures in the text.
@@ -517,12 +516,12 @@ On the BI Dashboard list page, click **More** in the upper-right corner and sele
 
 The Metrics page has four tabs:
 
-| Tab                    | Description                                                                                         |
-| ---------------------- | --------------------------------------------------------------------------------------------------- |
-| Metric list            | Create, edit and disable metrics, and manage their bindings and versions                           |
-| Pending proposals      | New metrics or new bindings suggested by AI from the data model; edit and apply them, or discard them |
-| Target values          | Target values for each metric in each period; add them manually or extract them from documents      |
-| Verified Q&A           | Manually confirmed "question + SQL" examples that AI refers to when it meets similar questions     |
+| Tab               | Description                                                                                           |
+| ----------------- | ----------------------------------------------------------------------------------------------------- |
+| Metric list       | Create, edit and disable metrics, and manage their bindings and versions                              |
+| Pending proposals | New metrics or new bindings suggested by AI from the data model; edit and apply them, or discard them |
+| Target values     | Target values for each metric in each period; add them manually or extract them from documents        |
+| Verified Q\&A     | Manually confirmed "question + SQL" examples that AI refers to when it meets similar questions        |
 
 > Note: If the screen says the datasources or user list failed to load, click **Retry**.
 
@@ -589,11 +588,11 @@ The list shows the metric, period (for example "2025 Q1"), value and unit, sourc
 * **Extract from document**: upload a PDF, Word (.docx, .doc), PowerPoint (.pptx, .ppt), TXT or Markdown file (up to 20 MB per file). Extraction runs in the background and takes up to about 15 minutes; if you switch tabs and come back, it continues. When it finishes, the number of values is shown and the view switches to **Pending**.
 * **Confirm and delete**: a pending value can be edited (value and unit) and then **Confirmed**, or deleted. A confirmed value can only be deleted.
 
-### Verified Q&A <a href="#yi-yan-zheng-wen-da" id="yi-yan-zheng-wen-da"></a>
+### Verified Q\&A <a href="#yi-yan-zheng-wen-da" id="yi-yan-zheng-wen-da"></a>
 
 <figure><img src="../.gitbook/assets/clipboard (5).png" alt=""><figcaption></figcaption></figure>
 
-Verified Q&A entries are questions and SQL that have been confirmed manually; AI refers to them when it meets similar questions. The list shows the question, SQL, metrics used, datasource, type (From tile / Manual), status, verifier and verification time.
+Verified Q\&A entries are questions and SQL that have been confirmed manually; AI refers to them when it meets similar questions. The list shows the question, SQL, metrics used, datasource, type (From tile / Manual), status, verifier and verification time.
 
 * **Adding from a dashboard**: on a standard tile, select **Mark as verified** from its "⋮" menu; for an Artifact page, mark each query in the **Datasource** panel.
 * **Adding manually**: select a datasource and enter the question (up to 500 characters) and the SQL. The system runs a test on that source, and the entry is saved only if it succeeds (returning no data also counts as success).
@@ -601,18 +600,18 @@ Verified Q&A entries are questions and SQL that have been confirmed manually; AI
 
 > Note:
 >
-> * After a metric is revised, related Q&A entries become **Needs re-verification**, and AI does not refer to them until they are re-verified.
-> * Q&A entries whose datasource has been deleted show **Source no longer exists** and can only be deleted.
+> * After a metric is revised, related Q\&A entries become **Needs re-verification**, and AI does not refer to them until they are re-verified.
+> * Q\&A entries whose datasource has been deleted show **Source no longer exists** and can only be deleted.
 
 ### Metric information shown on a dashboard <a href="#zai-yi-biao-ban-shang-kan-dao-de-zhi-biao-zi-xun" id="zai-yi-biao-ban-shang-kan-dao-de-zhi-biao-zi-xun"></a>
 
 <figure><img src="../.gitbook/assets/clipboard (6).png" alt=""><figcaption></figcaption></figure>
 
-| Item                          | Description                                                                                                                                                                                                                                                          |
-| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Metric tag                    | For example "Revenue v3", showing the metric and version used when the tile was generated. Click it to open the metric in a new tab. On an Artifact page, metric tags are shown in the **Datasource** panel                                                         |
-| Definition updated banner     | Shown when a metric's definition is updated, a metric is disabled or a target value changes. The system does not change the tile automatically; click **Ask AI to regenerate** and the system pre-fills the ask panel for you to send after confirming (there is no such button for target value changes) |
-| Mark as verified              | Register the tile's question and SQL as a verified Q&A. See [Verified Q&A](bi-yi-biao-ban.md#yi-yan-zheng-wen-da)                                                                                                                                                  |
+| Item                      | Description                                                                                                                                                                                                                                                                                               |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Metric tag                | For example "Revenue v3", showing the metric and version used when the tile was generated. Click it to open the metric in a new tab. On an Artifact page, metric tags are shown in the **Datasource** panel                                                                                               |
+| Definition updated banner | Shown when a metric's definition is updated, a metric is disabled or a target value changes. The system does not change the tile automatically; click **Ask AI to regenerate** and the system pre-fills the ask panel for you to send after confirming (there is no such button for target value changes) |
+| Mark as verified          | Register the tile's question and SQL as a verified Q\&A. See [Verified Q\&A](bi-yi-biao-ban.md#yi-yan-zheng-wen-da)                                                                                                                                                                                       |
 
 > Note: After the definition of a metric used by an Artifact page is updated, refreshing does not update the recorded version; you need to ask AI to regenerate the page.
 
