@@ -1,8 +1,8 @@
 ---
 description: >-
   A2A (Agent-to-Agent) lets AI Studio Agents call Agents on other platforms and
-  receive calls from them. This page explains how to register external Agents and
-  let your Agents delegate questions to them during a conversation.
+  receive calls from them. This page explains how to register external Agents
+  and let your Agents delegate questions to them
 ---
 
 # A2A
@@ -13,12 +13,10 @@ A2A (Agent-to-Agent) is an open standard that lets AI Agents on different platfo
 
 AI Studio supports A2A in two directions:
 
-| Direction | Description | Where to configure it |
-| --- | --- | --- |
-| Call an external Agent | Let an AI Studio Agent forward a question to an external Agent and present the answer to the user. For example, a procurement Agent can ask a supplier's inquiry Agent about delivery lead times. | Capability → A2A (this page) |
-| Publish your own Agent | Let external systems call an AI Studio Agent. For example, publish an equipment diagnostics Agent so a partner's system can ask questions using a key. | Agent settings → Integration → A2A. See [Integration - A2A](../agent-zhi-nan/zheng-he.md#a2a). |
-
-> Note: Published Agents are restricted by the system to read-only query operations. When delegating to an external Agent, AI Studio sends only a text question. The external system determines what it actually executes; AI Studio cannot restrict those actions.
+| Direction              | Description                                                                                                                                                                                       | Where to configure it                                                                          |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Call an external Agent | Let an AI Studio Agent forward a question to an external Agent and present the answer to the user. For example, a procurement Agent can ask a supplier's inquiry Agent about delivery lead times. | Capability → A2A (this page)                                                                   |
+| Publish your own Agent | Let external systems call an AI Studio Agent. For example, publish an equipment diagnostics Agent so a partner's system can ask questions using a key.                                            | Agent settings → Integration → A2A. See [Integration - A2A](../agent-zhi-nan/zheng-he.md#a2a). |
 
 {% hint style="info" %}
 Before using A2A, a system administrator must configure the allowed hosts and public URL under **System Setting → Configuration → Capability**. See [Configuration - A2A Public Base URL and allowed hosts](../xi-tong-she-ding-zhi-nan/pei-zhi.md#a2a-dui-wai-wang-zhi-yu-yun-xu-lian-xian-de-zhu-ji). A message asking you to contact an administrator usually means these settings have not been configured.
@@ -49,9 +47,9 @@ The list shows each external Agent's active status, name, creator, version, endp
 
 ### Chat mode
 
-| Option | Description |
-| --- | --- |
-| AIS-assigned Context | AI Studio creates a Context ID on the first turn and reuses it for subsequent turns. Use this default option if you are unsure. |
+| Option                  | Description                                                                                                                                                                                          |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| AIS-assigned Context    | AI Studio creates a Context ID on the first turn and reuses it for subsequent turns. Use this default option if you are unsure.                                                                      |
 | Server-assigned Context | The remote server creates the Context on the first turn, and subsequent turns reuse its returned Context ID. Choose this when the provider requires the server to manage context, as with LangGraph. |
 
 Changing the chat mode closes the existing Context and starts a new conversation on the next turn.
@@ -62,13 +60,13 @@ Selecting a method that requires a key displays a key field below. The original 
 
 <figure><img src="../.gitbook/assets/A04a-authentication-options.png" alt=""><figcaption></figcaption></figure>
 
-| Authentication | What AI Studio sends | What to enter in the key field |
-| --- | --- | --- |
-| None | No credentials | Leave blank. |
-| X API Key | The <code>x-api-key</code> header | The key provided by the remote service (required). |
-| Bearer | <code>Authorization: Bearer …</code> | The token itself (required). |
-| Basic | <code>Authorization: Basic …</code> | The complete <code>username:password</code> string. |
-| A2A API Key | The <code>X-A2A-API-Key</code> header | Optional. Most external platforms do not recognize this header. Do not select it unless the provider specifies it. |
+| Authentication | What AI Studio sends       | What to enter in the key field                                                                                     |
+| -------------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| None           | No credentials             | Leave blank.                                                                                                       |
+| X API Key      | The `x-api-key` header     | The key provided by the remote service (required).                                                                 |
+| Bearer         | `Authorization: Bearer …`  | The token itself (required).                                                                                       |
+| Basic          | `Authorization: Basic …`   | The complete `username:password` string.                                                                           |
+| A2A API Key    | The `X-A2A-API-Key` header | Optional. Most external platforms do not recognize this header. Do not select it unless the provider specifies it. |
 
 ## Day-to-day management
 
@@ -80,7 +78,7 @@ Hover over a row to show its action buttons on the right:
 
 <figure><img src="../.gitbook/assets/A06-agent-card.png" alt=""><figcaption></figcaption></figure>
 
-The Agent Card window displays the remote card as JSON. The <code>skills</code> section lists its capabilities, and <code>examples</code> contains sample questions. Your Agent uses this information to decide whether to delegate to it. Click the copy button in the upper-right corner to copy the entire JSON.
+The Agent Card window displays the remote card as JSON. The `skills` section lists its capabilities, and `examples` contains sample questions. Your Agent uses this information to decide whether to delegate to it. Click the copy button in the upper-right corner to copy the entire JSON.
 
 If the window says the Agent Card cannot be read, open its URL directly in a browser to check it. See the FAQ below.
 
@@ -109,11 +107,11 @@ Click an entry's name to open its detail page:
 
 Click **Add** to add an organization, company, department, role or individual and assign a permission:
 
-| Permission | Allowed actions |
-| --- | --- |
-| A2A Administrator | Modify, delete and manage members. |
-| A2A Collaborator | Modify settings. |
-| A2A User | Use the external Agent in conversations. |
+| Permission        | Allowed actions                          |
+| ----------------- | ---------------------------------------- |
+| A2A Administrator | Modify, delete and manage members.       |
+| A2A Collaborator  | Modify settings.                         |
+| A2A User          | Use the external Agent in conversations. |
 
 The A2A page itself also has permissions controlling who can open it and add entries. Administrators configure these from **⋮** in the list's upper-right corner. Page permissions are separate from the permissions for each external Agent.
 
@@ -149,7 +147,7 @@ When an Agent delegates a question to an external Agent, you can see what the tw
 
 <summary>Adding an external Agent asks me to contact a system administrator to allow the host</summary>
 
-The remote host is not on the allowed list. Ask an administrator to add it under **System Setting → Configuration → A2A Allowed Hosts**, for example <code>partner.example.com</code> or <code>partner.example.com:8443</code>. The change takes effect as soon as it is saved.
+The remote host is not on the allowed list. Ask an administrator to add it under **System Setting → Configuration → A2A Allowed Hosts**, for example `partner.example.com` or `partner.example.com:8443`. The change takes effect as soon as it is saved.
 
 </details>
 
