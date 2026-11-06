@@ -68,11 +68,64 @@ Here is a simple example showing the basic workflow actions:
 
 Follow the same steps with other nodes to build a workflow that fits your own needs.
 
+### Adding a node from a handle
+
+Besides dragging from the Node list, you can add the next node straight from a node's handle. In the image below, 1 is the source node and 2 is the node menu that opens after clicking its handle on the right:
+
+<figure><img src="../.gitbook/assets/workflow-quick-add.jpg" alt=""><figcaption></figcaption></figure>
+
+1. Hover over an unconnected handle on the right of a node. The handle grows and shows "+".
+2. Click the handle to open the node menu next to it.
+3. Choose the node to add. The new node is placed to the right and connected to that handle automatically.
+
+* Connected handles don't open the menu; drag from them to connect as before.
+* The menu doesn't offer Note, and when adding from a Fork handle it doesn't offer Merge.
+* When adding from a node inside a loop, the new node is placed in the same loop and the menu only offers nodes allowed inside a loop (as in the image above). See "Loop" in [Workflow Nodes](gong-zuo-liu-cheng-jie-dian.md).
+
 ### Example scenarios
 
 #### Workflow nodes (Fork / Merge): a news search Agent
 
 This scenario shows how a single query can search several data sources in parallel, with the results automatically combined and summarized into key points by the AI. Fork and Merge greatly improve the efficiency of data collection and analysis, and make a complex process fast and easy to follow.
+
+## Multiple connections and loop backs
+
+Workflow nodes can receive multiple connections, and you can connect a later node's output back to an earlier node so the process goes back and runs again. This suits "redo it if the check fails" processes, for example checking an LLM's result with a Condition node and returning to the LLM to regenerate when it doesn't pass.
+
+### Multiple connections into one node
+
+A node's input can be connected to several upstream nodes at once. The node runs once each time the upstream node of any connection finishes.
+
+If it should run only once after all branches finish, use a Merge node instead.
+
+### Loop back
+
+Drag a later node's output to an earlier node's input to create a loop back. A loop back is shown as an orange dashed line routed below the nodes and labeled "Loop back". In the image below, 1 is the LLM with two incoming connections, 2 is the Condition node and 3 is the "Loop back" connection:
+
+<figure><img src="../.gitbook/assets/workflow-back-edge.jpg" alt=""><figcaption></figcaption></figure>
+
+In this example, an LLM translates the user's input and translates again when the result doesn't meet the condition:
+
+1. Connect the preceding node to an LLM, enter a translation instruction in Context and insert the variable to translate.
+2. Click the handle on the right of the LLM and add a **Condition** node.
+3. Add a condition to CASE 1 of the Condition node, for example "LLM name.{result}" **Includes** a given keyword.
+4. Connect the CASE 1 exit to a Response node.
+5. Drag the ELSE exit back to the LLM's input to create a loop back. The LLM now has two incoming connections.
+6. Save and open **Test Preview**. When the condition is met, the response is output directly; when it isn't, the process returns to the LLM to translate again until the condition is met.
+
+For nodes that run again, the processing steps in the conversation show "#count" after the node name. For example, "LLM-6sX3 #3" means the node is running for the 3rd time.
+
+### Loop back limits
+
+* **A node cannot connect back to itself**: a loop back must pass through at least one other node, for example a Condition node that decides when to leave. If you connect a node's output to its own input, a message appears and no connection is created.
+* **No loop back into a Merge node**: Merge waits for all of its inputs, so the returning connection would keep it waiting until it times out. Connect to a node before the Merge instead.
+* **Re-run limit**: if nodes re-run more than 200 times in total in one run because of loop backs, the process stops and the conversation shows "Workflow re-run limit (200) exceeded. Check the exit conditions of connections that lead back to earlier nodes." Check that the condition for leaving the cycle can actually be met.
+* A Response node in a cycle created by a loop back may run more than once, and only the last answer is kept. See "Response" in [Workflow Nodes](gong-zuo-liu-cheng-jie-dian.md).
+* Loop backs can also be used inside a loop, going back to an earlier node within the same round. If each retry should count as a round, or you need to limit the number of retries, use the loop's termination condition and Max Iterations instead.
+
+{% hint style="info" %}
+Loop back or loop: use a loop when you need a fixed number of rounds or to accumulate results round by round; use a loop back when you only need to go back and redo a step when a check fails.
+{% endhint %}
 
 ## Copying and pasting nodes
 
